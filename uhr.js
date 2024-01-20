@@ -12,20 +12,23 @@ window.onload = function uhrzeit() {
         h = jetzt.getHours(),
         m = jetzt.getMinutes(),
         s = jetzt.getSeconds();
-    m = fuehrendeNull(m);
-    s = fuehrendeNull(s);
+
+    //Hinzufügen einer Null zur Stunde/Minute/Sekunde, falls diese einstellig sind
+    if (s < 10){
+        s = '0' + s
+    }
+    if (m < 10){
+        m = '0' + m
+    }
+    if (h < 10){
+        h = '0' + h
+    }
 
     //Ausgabe der aktuellen Uhrzeit
     document.getElementById('uhrzeit').innerHTML = h + ':' + m + ':' + s;
     setTimeout(uhrzeit, 500);
   }
-
-  //Hinzufügen einer Null zur Minute/Sekunde, falls diese einstellig sind
-  function fuehrendeNull(zahl) {
-    zahl = (zahl < 10 ? '0' : '' )+ zahl;  
-    return zahl;
-  }
-
+  
 /*
 ------------------------------------------------------------------------------------------------------------------------------------------
 Funktion für den Timer
@@ -49,9 +52,21 @@ function start(){
     if (minuten > 60){
         minuten = 60
     }
+    
 
     //Ermittel der Gesamtzeit in Sekunden
     let gesamtZeit = (stunden * 60 * 60) + (minuten * 60) + sekunden
+
+    //Hinzufügen einer Null zur Stunde/Minute/Sekunde, falls diese einstellig sind
+    if (sekunden < 10){
+        sekunden = '0' + sekunden
+    }
+    if (minuten < 10){
+        minuten = '0' + minuten
+    }
+    if (stunden <10){
+        stunden = '0' + stunden
+    }
 
     //Ausgabe der Satrtzeit
     document.getElementById('stundenout').innerHTML = stunden
@@ -59,36 +74,45 @@ function start(){
     document.getElementById('sekundenout').innerHTML = sekunden
 
     //Starten des Zeitintervalles
-    timerintervalId = setInterval(timer, 1000, gesamtZeit);
+    timerintervalId = setInterval(timer, 1000, gesamtZeit)
 }
 
 function timer() {
     // Lesen der aktuellen verbleibenden Zeit aus den HTML-Elementen
-    let stunden = Number(document.getElementById('stundenout').innerText);
-    let minuten = Number(document.getElementById('minutenout').innerText);
-    let sekunden = Number(document.getElementById('sekundenout').innerText);
+    let stunden = Number(document.getElementById('stundenout').innerHTML)
+    let minuten = Number(document.getElementById('minutenout').innerHTML)
+    let sekunden = Number(document.getElementById('sekundenout').innerHTML)
 
     //Berechnen der verbilbenen Gesamtzeit
-    let gesamtZeit = (stunden * 60 * 60) + (minuten * 60) + sekunden;
+    let gesamtZeit = (stunden * 60 * 60) + (minuten * 60) + sekunden
 
     //Überprüfen ob der Timer abgeschlossen ist
     if (gesamtZeit <= 0) {
-        clearInterval(timerintervalId);
-        alert("Timer abgelaufen");
+        clearInterval(timerintervalId)
+        alert("Timer abgelaufen")
     } else {
-    gesamtZeit = gesamtZeit - 1;
+    gesamtZeit = gesamtZeit - 1
     
     //Berechnen der verblibenen Stunden, Minuten und Sekunden
-    let neueStunden = Math.floor(gesamtZeit / 3600);
-    let neueMinuten = Math.floor((gesamtZeit % 3600) / 60);
-    let neueSekunden = gesamtZeit % 60;
+    let neueStunden = Math.floor(gesamtZeit / 3600)
+    let neueMinuten = Math.floor((gesamtZeit % 3600) / 60)
+    let neueSekunden = gesamtZeit % 60
+
+    //Hinzufügen einer Null zur Minute/Sekunde, falls diese einstellig sind
+    if (neueSekunden < 10){
+        neueSekunden = '0' + neueSekunden
+    }
+    if (neueMinuten < 10){
+        neueMinuten = '0' + neueMinuten
+    }
+    if (neueStunden < 10){
+        neueStunden = '0' + neueStunden
+    }
 
     //Ausgabe der verblibenen Stunden, Minuten und Sekunden
-    document.getElementById('stundenout').innerText = neueStunden;
-    document.getElementById('minutenout').innerText = neueMinuten;
-    document.getElementById('sekundenout').innerText = neueSekunden;
-
-    document.getElementById('timerausgabe').innerHTML = neueStunden + ':' + neueMinuten + ':' + neueSekunden
+    document.getElementById('stundenout').innerText = neueStunden
+    document.getElementById('minutenout').innerText = neueMinuten
+    document.getElementById('sekundenout').innerText = neueSekunden
     }
 }
 

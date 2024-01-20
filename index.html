@@ -13,12 +13,15 @@
             <span id="uhrzeit">00:00:00</span>
         </div>
         <h2>Timer</h2>
+        <div class="timeraktuell">
+            <p><span id="stundenout">00</span>:<span id="minutenout">00</span>:<span id="sekundenout">00</span></p>
+        </div>
         <div class="timerbox">
-            <table>
-                <tr><th></th><th>Stunden</th><th>Minuten</th><th>Sekunden</th></tr>
-                <tr><th>Startzeit:</th><td><input id="stunden" type="number"  min="1" max="99"></td><td><input id="minuten"  type="number"  min="1" max="60"></td><td><input id="sekunden" type="number"  min="1" max="60"></td></tr>
-                <tr><th>Aktuell:</th><td><span id="stundenout"></span></td><td><span id="minutenout"></span></td><td><span id="sekundenout"></span></td></tr>
-            </table>
+            <p>  Startzeit:
+                <input id="stunden" type="number"  min="1" max="99">
+                <input id="minuten"  type="number"  min="1" max="60">
+                <input id="sekunden" type="number"  min="1" max="60">
+            </p>
         </div>
         <div class="timerbuttonbox">
             <button class="btn" onclick="start()">Start</button>

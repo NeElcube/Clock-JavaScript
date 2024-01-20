@@ -82,7 +82,7 @@ th {
 }
 
 .timerbox {
-  padding-top: 15px;
+  padding-top: 5px;
   padding-bottom: 15px;
   font-size: 15px;
   font-weight: 600;
@@ -93,7 +93,7 @@ th {
 
 .timeraktuell {
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: center;
   color: #161823;

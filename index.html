@@ -7,12 +7,21 @@
         <script src="uhr.js"></script>
     </head>
     <body>
-        <h1>Timer</h1>
-        <table>
-            <tr><th></th><th>Stunden</th><th>Minuten</th><th>Sekunden</th></tr>
-            <tr><th>Startzeit:</th><td><input id="stunden" type="number"  min="1" max="99"></td><td><input id="minuten"  type="number"  min="1" max="60"></td><td><input id="sekunden" type="number"  min="1" max="60"></td></tr>
-            <tr><th>Aktuell:</th><td><span id="stundenout"></span></td><td><span id="minutenout"></span></td><td><span id="sekundenout"></span></td></tr>
-        </table>
-        <button onclick="start()">Start</button>
+        <h1>Uhr</h1>
+        <h2>Uhrzeit</h2>
+        <div class="uhrzeitbox">
+            <span id="uhrzeit">00:00:00</span>
+        </div>
+        <h2>Timer</h2>
+        <div class="timerbox">
+            <table>
+                <tr><th></th><th>Stunden</th><th>Minuten</th><th>Sekunden</th></tr>
+                <tr><th>Startzeit:</th><td><input id="stunden" type="number"  min="1" max="99"></td><td><input id="minuten"  type="number"  min="1" max="60"></td><td><input id="sekunden" type="number"  min="1" max="60"></td></tr>
+                <tr><th>Aktuell:</th><td><span id="stundenout"></span></td><td><span id="minutenout"></span></td><td><span id="sekundenout"></span></td></tr>
+            </table>
+        </div>
+        <div class="timerbuttonbox">
+            <button class="btn" onclick="start()">Start</button>
+        </div>
     </body>
 </html>

@@ -1,3 +1,37 @@
+/*
+------------------------------------------------------------------------------------------------------------------------------------------
+Funktion für die Uhrzeit
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+window.onload = function uhrzeit() {
+    //Einlesen der Zeiz
+    var jetzt = new Date(),
+
+    //Werte auslesnen aus der jetzigen Zeit
+        h = jetzt.getHours(),
+        m = jetzt.getMinutes(),
+        s = jetzt.getSeconds();
+    m = fuehrendeNull(m);
+    s = fuehrendeNull(s);
+
+    //Ausgabe der aktuellen Uhrzeit
+    document.getElementById('uhrzeit').innerHTML = h + ':' + m + ':' + s;
+    setTimeout(uhrzeit, 500);
+  }
+
+  //Hinzufügen einer Null zur Minute/Sekunde, falls diese einstellig sind
+  function fuehrendeNull(zahl) {
+    zahl = (zahl < 10 ? '0' : '' )+ zahl;  
+    return zahl;
+  }
+
+/*
+------------------------------------------------------------------------------------------------------------------------------------------
+Funktion für den Timer
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
 let timerintervalId
 
 function start(){
@@ -5,6 +39,8 @@ function start(){
     let stunden = Number(document.getElementById('stunden').value)
     let minuten = Number(document.getElementById('minuten').value)
     let sekunden = Number(document.getElementById('sekunden').value)
+
+    console.log(stunden)
     
     //Begrenzung der Sekunden und Minuten auf 60
     if (sekunden > 60){
@@ -51,5 +87,13 @@ function timer() {
     document.getElementById('stundenout').innerText = neueStunden;
     document.getElementById('minutenout').innerText = neueMinuten;
     document.getElementById('sekundenout').innerText = neueSekunden;
+
+    document.getElementById('timerausgabe').innerHTML = neueStunden + ':' + neueMinuten + ':' + neueSekunden
     }
 }
+
+/*
+------------------------------------------------------------------------------------------------------------------------------------------
+Funktion für die Stoppuhr
+------------------------------------------------------------------------------------------------------------------------------------------
+*/

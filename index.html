@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Uhr</title>
+        <meta charset="UTF-8"/>
+        <link rel="icon" href="img/uhr_icon.png">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="uhr.js"></script>
+    </head>
+    <body>
+        <h1>Timer</h1>
+        <table>
+            <tr><th></th><th>Stunden</th><th>Minuten</th><th>Sekunden</th></tr>
+            <tr><th>Startzeit:</th><td><input id="stunden" type="number"  min="1" max="99"></td><td><input id="minuten"  type="number"  min="1" max="60"></td><td><input id="sekunden" type="number"  min="1" max="60"></td></tr>
+            <tr><th>Aktuell:</th><td><span id="stundenout"></span></td><td><span id="minutenout"></span></td><td><span id="sekundenout"></span></td></tr>
+        </table>
+        <button onclick="start()">Start</button>
+    </body>
+</html>

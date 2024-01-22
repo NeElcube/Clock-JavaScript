@@ -1,12 +1,10 @@
 body {
   background-color:#F8F9FA;
   font-family: Sans, Helvetica, Arial;
-  padding:0 1em;
   margin:0
 }
 
 h1 {
-  margin: 0 -2em 1em -2em;
   padding: 0.5em 3em;
   color: #161823;
   font-size: 35px;
@@ -17,6 +15,7 @@ h1 {
 }
 h2 {
   margin: 0.5em 0 1em 0;
+  padding:0 1em;
   font-size: 150%;
   font-weight: bold;
   text-align:left;
@@ -131,4 +130,18 @@ transform : translateY(-0px);
 background-color: #cac9c9c5;
 color: #161823;
 border: solid 1px #000000;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c7c5c5b6;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
 }

@@ -98,7 +98,7 @@ function timer() {
     let neueMinuten = Math.floor((gesamtZeit % 3600) / 60)
     let neueSekunden = gesamtZeit % 60
 
-    //Hinzufügen einer Null zur Minute/Sekunde, falls diese einstellig sind
+    //Hinzufügen einer Null zur Minute/Sekunde, falls diese einstellig sind//Hinzufügen einer Null zur Minute/Sekunde, falls diese einstellig sind
     if (neueSekunden < 10){
         neueSekunden = '0' + neueSekunden
     }
@@ -121,3 +121,53 @@ function timer() {
 Funktion für die Stoppuhr
 ------------------------------------------------------------------------------------------------------------------------------------------
 */
+
+let stoppuhrintervalId
+
+function stoppuhrstart(){
+    stoppuhrintervalId = setInterval(stoppuhr, 1000)
+}
+
+function stoppuhr(){
+    let stunden = Number(document.getElementById('stoppstundenout').innerHTML)
+    let minuten = Number(document.getElementById('stoppminutenout').innerHTML)
+    let sekunden = Number(document.getElementById('stoppsekundenout').innerHTML)
+
+    sekunden = sekunden + 1
+
+    if (sekunden === 60){
+        minuten = minuten + 1
+        sekunden = 0
+    }
+    if (minuten === 60){
+        stunden = stunden + 1
+        minuten = 0
+    }
+
+    //Hinzufügen einer Null zur Minute/Sekunde, falls diese einstellig sind
+    if (sekunden < 10){
+        sekunden = '0' + sekunden
+    }
+    if (minuten < 10){
+        minuten = '0' + minuten
+    }
+    if (stunden <10){
+        stunden = '0' + stunden
+    }  
+
+     //Ausgabe der vergangenen Stunden, Minuten und Sekunden
+    document.getElementById('stoppstundenout').innerText = stunden
+    document.getElementById('stoppminutenout').innerText = minuten
+    document.getElementById('stoppsekundenout').innerText = sekunden
+}
+
+function stoppuhrreset(){
+    clearInterval(stoppuhrintervalId)
+    document.getElementById('stoppstundenout').innerText = '00'
+    document.getElementById('stoppminutenout').innerText = '00'
+    document.getElementById('stoppsekundenout').innerText = '00'
+}
+
+function stoppuhrstopp(){
+    clearInterval(stoppuhrintervalId)
+}

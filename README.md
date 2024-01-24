@@ -1,4 +1,4 @@
-## Clock JavaScript clock
+## Clock JavaScript
 This is a simple clock in JavaScript and HTML
 with a timer and stopwatch
 

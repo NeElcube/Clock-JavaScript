@@ -89,7 +89,7 @@ function timer() {
     //Überprüfen ob der Timer abgeschlossen ist
     if (gesamtZeit <= 0) {
         clearInterval(timerintervalId)
-        alert("Timer abgelaufen")
+        alert("Timer expired")
     } else {
     gesamtZeit = gesamtZeit - 1
     

@@ -1,14 +1,14 @@
 <html>
     <head>
-        <title>Uhr</title>
+        <title>Clock</title>
         <meta charset="UTF-8"/>
         <link rel="icon" href="img/uhr_icon.png">
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script src="uhr.js"></script>
     </head>
     <body>
-        <h1>Uhr</h1>
-        <h2>Uhrzeit</h2>
+        <h1>Clock</h1>
+        <h2>Current Time</h2>
         <div class="uhrzeitbox">
             <span id="uhrzeit">00:00:00</span>
         </div>
@@ -17,7 +17,7 @@
             <p><span id="stundenout">00</span>:<span id="minutenout">00</span>:<span id="sekundenout">00</span></p>
         </div>
         <div class="timerbox">
-            <p>  Startzeit:
+            <p>  Start time:
                 <input id="stunden" type="number"  min="1" max="99">
                 <input id="minuten"  type="number"  min="1" max="60">
                 <input id="sekunden" type="number"  min="1" max="60">
@@ -26,13 +26,13 @@
         <div class="timerbuttonbox">
             <button class="btn" onclick="start()">Start</button>
         </div>
-        <h2>Stopp Uhr</h2>
+        <h2>Stop watch</h2>
         <div class="timeraktuell">
             <p><span id="stoppstundenout">00</span>:<span id="stoppminutenout">00</span>:<span id="stoppsekundenout">00</span></p>
         </div>
         <div class="timerbuttonbox">
             <button class="btn" onclick="stoppuhrstart()">Start</button>
-            <button class="btn" onclick="stoppuhrstopp()">Stopp</button>
+            <button class="btn" onclick="stoppuhrstopp()">Stop</button>
             <button class="btn" onclick="stoppuhrreset()">Reset</button>
         </div>
         <br>
